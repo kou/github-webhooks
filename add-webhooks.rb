@@ -59,6 +59,6 @@ client.repositories(user).each do |repository|
     puts("Already exist at #{repository.full_name}")
     next
   end
-  puts("Creating an webhook at #{repository.full_name}...")
+  puts("Creating a webhook at #{repository.full_name}...")
   client.create_hook(repository.full_name, webhook_name, webhook_config, webhook_options)
 end
