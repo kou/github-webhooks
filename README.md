@@ -17,14 +17,14 @@ At first, create a new access token with required scopes.
 
 ## How to add a new webhook for all repositories under an user account?
 
-Execute the script `remove-webhooks.rb` as:
+Execute the script `add-webhooks.rb` as:
 
 ```
 $ export GITHUB_TOKEN=abcd01234...
 $ USER=kou
 $ WEBHOOK_URL=http://example.com/new-webhook-to-be-added
 $ CONTENT_TYPE=json
-$ ./add-webhooks.rb $USER_OR_ORGANIZATION $WEBHOOK_URL $CONTENT_TYPE
+$ ./add-webhooks.rb $USER $WEBHOOK_URL $CONTENT_TYPE
 ```
 
 Possible values of the content type are:
