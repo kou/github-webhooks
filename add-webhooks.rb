@@ -17,8 +17,11 @@
 
 require "octokit"
 
+available_content_type = %w{json form}
+
 unless ARGV.size == 3
   $stderr.puts("#{$0} USER WEBHOOK_URL CONTENT_TYPE")
+  $stderr.puts("  Available values for CONTENT_TYPE: #{available_content_type.join(", ")}")
   exit(false)
 end
 
@@ -26,7 +29,6 @@ user = ARGV.shift
 webhook_url = ARGV.shift
 content_type = ARGV.shift
 
-available_content_type = %{json form}
 unless available_content_type.include?(content_type)
   $stderr.puts("Unsupported content type: #{content_type}")
   exit(false)
